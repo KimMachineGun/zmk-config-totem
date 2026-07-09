@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
+#include <input/processors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE  0
@@ -10,11 +10,26 @@
 #define ADJ   3
 #define NUM   4
 #define MOUSE 5
+#define BOOST 6
 
 &lt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <150>;
+};
+
+&mmv_input_listener {
+    boost {
+        layers = <BOOST>;
+        input-processors = <&zip_xy_scaler 3 1>;
+    };
+};
+
+&msc_input_listener {
+    boost {
+        layers = <BOOST>;
+        input-processors = <&zip_scroll_scaler 2 1>;
+    };
 };
 
 / {
@@ -64,16 +79,6 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        combo_esc_we {
-            timeout-ms = <35>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -82,7 +87,7 @@
             bindings = <
                 &kp Q            &kp W            &kp E            &kp R            &kp T             &kp Y            &kp U            &kp I            &kp O            &kp P
                 &hml LCTRL A     &hml LALT S      &hml LGUI D      &hml LSHFT F     &kp G             &kp H            &hmr RSHFT J     &hmr RGUI K      &hmr RALT L      &hmr RCTRL SEMI
-&kp ESC         &kp Z            &kp X            &kp C            &kp V            &kp B             &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH         &kp APOS
+&kp GRAVE       &kp Z            &kp X            &kp C            &kp V            &kp B             &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH         &kp APOS
                                                    &lt MOUSE ESC    &lt NAV TAB      &kp SPACE                         &lt SYM RET      &kp BSPC         &lt NUM DEL
             >;
         };
@@ -90,9 +95,9 @@
         nav_layer {
             label = "NAV";
             bindings = <
-                &kp ESC          &kp LG(LBKT)     &kp LG(RBKT)     &kp LG(W)        &kp LG(T)         &kp LG(Z)        &kp LG(X)        &kp LG(C)        &kp LG(V)        &kp LG(LS(Z))
-                &osm LCTRL       &osm LALT        &osm LSHFT       &osm LGUI        &kp CAPS          &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp END
-&kp CAPS        &kp LG(LS(LBKT)) &kp LG(LS(RBKT)) &kp LG(L)        &kp LG(P)        &kp LG(LS(P))     &kp LG(LEFT)     &kp LA(LEFT)     &kp PG_DN        &kp PG_UP        &kp LA(RIGHT)    &kp LG(RIGHT)
+                &none            &none            &none            &none            &none             &none            &none            &none            &none            &none
+                &osm LCTRL       &osm LALT        &osm LGUI        &osm LSHFT       &none             &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp END
+&kp CAPS        &none            &none            &none            &none            &none             &kp HOME         &kp PG_DN        &kp PG_UP        &kp END          &none            &none
                                                    &trans           &trans           &trans                            &trans           &kp BSPC         &kp DEL
             >;
         };
@@ -111,8 +116,8 @@
             label = "ADJ";
             bindings = <
                 &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4      &kp C_BRI_DN     &kp C_BRI_UP     &kp F3           &kp F4           &kp SYS_SLEEP
-                &bt BT_CLR       &bt BT_NXT       &out OUT_TOG     &out OUT_USB     &out OUT_BLE      &kp C_VOL_DN     &kp C_VOL_UP     &kp C_MUTE       &kp C_PP         &kp LC(SPACE)
-&sys_reset      &bootloader      &bt BT_PRV       &none            &to BASE         &none             &kp C_PREV      &kp C_NEXT       &none            &none            &none            &none
+                &bt BT_CLR       &bt BT_NXT       &none            &none            &none             &kp C_VOL_DN     &kp C_VOL_UP     &kp C_MUTE       &kp C_PP         &kp LC(SPACE)
+&sys_reset      &bootloader      &bt BT_PRV       &none            &to BASE         &none             &kp C_PREV       &kp C_NEXT       &none            &none            &none            &none
                                                    &trans           &trans           &trans                            &trans           &trans           &trans
             >;
         };
@@ -133,6 +138,16 @@
                 &kp ESC          &mkp MB4         &mkp MB5         &none            &none             &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP     &msc SCRL_RIGHT  &mkp MCLK
                 &mkp LCLK        &mkp RCLK        &mkp MCLK        &kp LSHFT        &kp LGUI          &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT  &mkp LCLK
 &none           &kp LCTRL        &kp LALT         &kp LSHFT        &kp LGUI         &none             &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP     &msc SCRL_RIGHT  &mkp RCLK        &mkp MCLK
+                                                   &trans           &trans           &trans                            &trans           &mo BOOST       &trans
+            >;
+        };
+
+        boost_layer {
+            label = "BOOST";
+            bindings = <
+                &trans           &trans           &trans           &trans           &trans            &trans           &trans           &trans           &trans           &trans
+                &trans           &trans           &trans           &trans           &trans            &trans           &trans           &trans           &trans           &trans
+&trans          &trans           &trans           &trans           &trans           &trans            &trans           &trans           &trans           &trans           &trans           &trans
                                                    &trans           &trans           &trans                            &trans           &trans           &trans
             >;
         };
