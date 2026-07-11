@@ -94,7 +94,7 @@
                 &kp Q            &kp W            &kp E            &kp R            &kp T             &kp Y            &kp U            &kp I            &kp O            &kp P
                 &hml LCTRL A     &hml LOPT S      &hml LCMD D      &hml LSHFT F     &kp G             &kp H            &hmr RSHFT J     &hmr RCMD K      &hmr ROPT L      &hmr RCTRL SEMI
 &kp GRAVE       &kp Z            &kp X            &kp C            &kp V            &kp B             &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH         &kp APOS
-                                                   &lt MOUSE ESC    &lt NAV TAB      &kp SPACE                         &lt SYM RET      &kp BSPC         &lt NUM DEL
+                                                   &lt MOUSE ESC    &lt NAV TAB      &kp SPACE                         &lt SYM RET      &kp BSPC         &lt NUM LANG1
             >;
         };
 
