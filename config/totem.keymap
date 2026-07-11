@@ -2,6 +2,9 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 750
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 13
 #include <dt-bindings/zmk/pointing.h>
 
 #define LOPT LALT
@@ -24,7 +27,7 @@
 &mmv_input_listener {
     boost {
         layers = <BOOST>;
-        input-processors = <&zip_xy_scaler 3 1>;
+        input-processors = <&zip_xy_scaler 2 1>;
     };
 };
 
