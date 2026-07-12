@@ -113,7 +113,7 @@
             bindings = <
                 &kp TILDE        &kp LT           &kp GT           &kp PIPE         &kp BSLH          &kp AT           &kp HASH         &kp DLLR         &kp PRCNT        &kp CARET
                 &kp EQUAL        &kp LPAR         &kp LBKT         &kp LBRC         &kp COLON         &kp AMPS         &kp STAR         &kp PLUS         &kp MINUS        &kp UNDERSCORE
-&kp EXCL        &kp RPAR         &kp RBKT         &kp RBRC         &kp SEMI         &kp GRAVE         &none            &kp DQT          &kp QUESTION     &none            &none            &none
+&kp EXCL        &kp GRAVE        &kp RPAR         &kp RBKT         &kp RBRC         &kp SEMI         &none            &kp DQT          &kp QUESTION     &none            &none            &none
                                                    &trans           &trans           &trans                            &trans           &trans           &trans
             >;
         };
