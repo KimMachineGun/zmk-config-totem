@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 750
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 13
 #include <dt-bindings/zmk/pointing.h>
 
 #define LOPT LALT
@@ -22,6 +21,10 @@
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <150>;
+};
+
+&mmv {
+    time-to-max-speed-ms = <400>;
 };
 
 &mmv_input_listener {
@@ -141,7 +144,7 @@
         mouse_layer {
             label = "MOUSE";
             bindings = <
-                &kp ESC          &mkp MB4         &mkp MB5         &none            &none             &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &none
+                &kp ESC          &mkp MB4         &mkp MB5         &none            &none             &msc MOVE_LEFT   &msc MOVE_DOWN   &msc MOVE_UP     &msc MOVE_RIGHT  &none
                 &mkp LCLK        &mkp RCLK        &mkp MCLK        &none            &none             &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT  &none
 &none           &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &none            &none            &none            &none            &none            &none
                                                    &trans           &trans           &trans                            &trans           &mo BOOST       &trans
