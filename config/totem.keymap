@@ -113,7 +113,7 @@
                 &none            &kp LBKT         &kp RBKT         &kp MINUS        &none             &none                     &none              &none            &none            &none
                 &none            &kp LPAR         &kp RPAR         &kp BSLH         &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
 &none           &none            &kp LBRC         &kp RBRC         &kp EQUAL        &none             &none                     &none              &none            &none            &none            &none
-                                                   &trans           &trans           &trans                                      &trans             &trans           &trans
+                                                   &trans           &trans           &trans                                      &trans             &trans           &mo ADJ
             >;
         };
 
@@ -123,7 +123,7 @@
                 &kp N1           &kp N2           &kp N3           &kp N4           &kp N5            &kp N6                   &kp N7             &kp N8           &kp N9           &kp N0
                 &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
 &none           &none            &none            &none            &none            &none            &none                     &kp PLUS          &kp MINUS        &kp STAR         &kp FSLH         &none
-                                                   &trans           &trans           &trans                                      &trans             &trans           &mo ADJ
+                                                   &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
         };
 
