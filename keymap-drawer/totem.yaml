@@ -1,0 +1,131 @@
+layout: {zmk_keyboard: totem}
+layers:
+  BASE:
+  - [Q, W, E, R, T, Y, U, I, O, P]
+  - - {t: A, h: LCTRL}
+    - {t: S, h: LALT}
+    - {t: D, h: LCMD}
+    - {t: F, h: LSHFT}
+    - G
+    - H
+    - {t: J, h: RSHFT}
+    - {t: K, h: RCMD}
+    - {t: L, h: RALT}
+    - {t: ;, h: RCTRL}
+  - ['`', Z, X, C, V, B, N, M, ',', .]
+  - - /
+    - ''''
+    - NUM
+    - SYM
+    - {t: SPACE, h: VI}
+    - Hyper
+    - Super
+    - MOUSE
+  VI:
+  - ['', '', '', Gui+Sft+Z, '', Gui+C, Gui+Z, TAB, Sft+TAB, Gui+V]
+  - [LCTRL, LALT, LCMD, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
+  - [Ctl+SPACE, '', '', '', '', '', '', RET, BSPC, '']
+  - - ''
+    - ''
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  SYM:
+  - ['', '[', ']', '-', '', '', '', '', '', '']
+  - ['', (, ), \, '', '', RSHFT, RCMD, RALT, RCTRL]
+  - ['', '', '{', '}', '=', '', '', '', '', '']
+  - - ''
+    - ''
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  NUM:
+  - ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+  - [LCTRL, LALT, LCMD, LSHFT, '', '', RSHFT, RCMD, RALT, RCTRL]
+  - ['', '', '', '', '', '', '', +, '-', '*']
+  - - /
+    - ''
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - ADJ
+  MOUSE:
+  - ['', Scroll ↑, Move ↑, Scroll ↓, '', '', '', '', '', '']
+  - ['', Move ←, Move ↓, Move →, '', '', RSHFT, RCMD, RALT, RCTRL]
+  - ['', '', Scroll ←, '', Scroll →, '', '', '', '', '']
+  - - ''
+    - ''
+    - PRECISION
+    - Right Click
+    - Left Click
+    - ''
+    - ''
+    - {type: held}
+  PRECISION:
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+  ADJ:
+  - - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - {t: BT, h: '3'}
+    - {t: BT, h: '4'}
+    - BRI DN
+    - BRI UP
+    - ''
+    - ''
+    - ''
+  - ['', '', '', '', '', VOL DN, VOL UP, MUTE, '', '']
+  - [BT CLR, '', '', '', Boot, '', '', PREV, PP, NEXT]
+  - - ''
+    - ''
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}

@@ -101,7 +101,7 @@
             label = "VI";
             bindings = <
                 &none            &none            &none            &kp LG(LS(Z))    &none             &kp LG(C)                &kp LG(Z)          &kp TAB          &kp LS(TAB)      &kp LG(V)
-                &kp LCTRL        &kp LSHFT        &kp LOPT         &kp LCMD         &none             &kp LEFT                 &kp DOWN           &kp UP           &kp RIGHT        &kp ESC
+                &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &kp LEFT                 &kp DOWN           &kp UP           &kp RIGHT        &kp ESC
 &kp LC(SPACE)  &none            &none            &none            &none            &none             &none                     &kp RET            &kp BSPC         &none            &none            &none
                                                    &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
@@ -110,9 +110,9 @@
         sym_layer {
             label = "SYM";
             bindings = <
-                &none            &none            &kp LBKT         &kp RBKT         &kp MINUS         &none                     &none              &none            &none            &none
-                &none            &none            &kp LPAR         &kp RPAR         &kp BSLH          &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
-&none           &none            &none            &kp LBRC         &kp RBRC         &kp EQUAL         &none                     &none              &none            &none            &none            &none
+                &none            &kp LBKT         &kp RBKT         &kp MINUS        &none             &none                     &none              &none            &none            &none
+                &none            &kp LPAR         &kp RPAR         &kp BSLH         &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
+&none           &none            &kp LBRC         &kp RBRC         &kp EQUAL        &none             &none                     &none              &none            &none            &none            &none
                                                    &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
         };
@@ -133,7 +133,7 @@
                 &none            &msc SCRL_UP     &mmv MOVE_UP     &msc SCRL_DOWN   &none             &none                     &none              &none            &none            &none
                 &none            &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
 &none           &none            &msc SCRL_LEFT   &none            &msc SCRL_RIGHT  &none             &none                     &none              &none            &none            &none            &none
-                                                   &mo PRECISION    &mkp LCLK        &mkp RCLK                                  &none              &none            &trans
+                                                   &mo PRECISION    &mkp RCLK        &mkp LCLK                                  &none              &none            &trans
             >;
         };
 
