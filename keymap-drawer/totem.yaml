@@ -15,8 +15,8 @@ layers:
   - ['`', Z, X, C, V, B, N, M, ',', .]
   - - /
     - ''''
-    - NUM
     - SYM
+    - NUM
     - {t: SPACE, h: VI}
     - Hyper
     - Super
@@ -39,8 +39,8 @@ layers:
   - ['', '', '{', '}', '=', '', '', '', '', '']
   - - ''
     - ''
-    - {type: trans}
     - {type: held}
+    - {type: trans}
     - {type: trans}
     - {type: trans}
     - {type: trans}
@@ -51,8 +51,8 @@ layers:
   - ['', '', '', '', '', '', '', +, '-', '*']
   - - /
     - ''
-    - {type: held}
     - {type: trans}
+    - {type: held}
     - {type: trans}
     - {type: trans}
     - {type: trans}
@@ -123,8 +123,8 @@ layers:
   - [BT CLR, '', '', '', Boot, '', '', PREV, PP, NEXT]
   - - ''
     - ''
-    - {type: held}
     - {type: trans}
+    - {type: held}
     - {type: trans}
     - {type: trans}
     - {type: trans}
