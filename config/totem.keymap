@@ -10,19 +10,13 @@
 #define LOPT LALT
 #define ROPT RALT
 
-#define BASE  0
-#define NAV   1
-#define SYM   2
-#define ADJ   3
-#define NUM   4
-#define MOUSE 5
-#define BOOST 6
-
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-};
+#define BASE      0
+#define VI        1
+#define SYM       2
+#define NUM       3
+#define MOUSE     4
+#define PRECISION 5
+#define ADJ       6
 
 &mmv {
     trigger-period-ms = <8>;
@@ -30,16 +24,16 @@
 };
 
 &mmv_input_listener {
-    boost {
-        layers = <BOOST>;
-        input-processors = <&zip_xy_scaler 3 2>;
+    precision {
+        layers = <PRECISION>;
+        input-processors = <&zip_xy_scaler 2 3>;
     };
 };
 
 &msc_input_listener {
-    boost {
-        layers = <BOOST>;
-        input-processors = <&zip_scroll_scaler 3 2>;
+    precision {
+        layers = <PRECISION>;
+        input-processors = <&zip_scroll_scaler 2 3>;
     };
 };
 
@@ -79,14 +73,14 @@
             hold-trigger-on-release;
         };
 
-        osm: one_shot_mod {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&kp>;
-            release-after-ms = <2000>;
-            quick-release;
-            lazy;
-            ignore-modifiers;
+        vi_spc: vi_space {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -96,80 +90,71 @@
         base {
             label = "BASE";
             bindings = <
-                &kp Q            &kp W            &kp E            &kp R            &kp T             &kp Y            &kp U            &kp I            &kp O            &kp P
-                &hml LCTRL A     &hml LOPT S      &hml LCMD D      &hml LSHFT F     &kp G             &kp H            &hmr RSHFT J     &hmr RCMD K      &hmr ROPT L      &hmr RCTRL SEMI
-&kp GRAVE       &kp Z            &kp X            &kp C            &kp V            &kp B             &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH         &kp APOS
-                                                   &lt MOUSE ESC    &lt NAV TAB      &kp SPACE                         &kp BSPC         &lt SYM RET      &lt NUM LANG1
+                &kp Q            &kp W            &kp E            &kp R            &kp T             &kp Y                    &kp U              &kp I            &kp O            &kp P
+                &hml LCTRL A     &hml LOPT S      &hml LCMD D      &hml LSHFT F     &kp G             &kp H                    &hmr RSHFT J       &hmr RCMD K      &hmr ROPT L      &hmr RCTRL SEMI
+&kp GRAVE       &kp Z            &kp X            &kp C            &kp V            &kp B             &kp N                    &kp M              &kp COMMA        &kp DOT          &kp FSLH         &kp APOS
+                                                   &mo NUM           &mo SYM           &vi_spc VI SPACE                            &kp LC(LS(LA(LGUI))) &kp LC(LA(LGUI)) &mo MOUSE
             >;
         };
 
-        nav_layer {
-            label = "NAV";
+        vi_layer {
+            label = "VI";
             bindings = <
-                &none            &none            &none            &none            &none             &none            &none            &none            &none            &none
-                &osm LCTRL       &osm LOPT        &osm LCMD        &osm LSHFT       &none             &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &none
-&kp CAPS        &none            &none            &none            &none            &none             &kp HOME         &kp PG_DN        &kp PG_UP        &kp END          &none            &none
-                                                   &trans           &trans           &trans                            &trans           &trans           &kp DEL
+                &none            &none            &none            &kp LG(LS(Z))    &none             &kp LG(C)                &kp LG(Z)          &kp TAB          &kp LS(TAB)      &kp LG(V)
+                &kp LCTRL        &kp LSHFT        &kp LOPT         &kp LCMD         &none             &kp LEFT                 &kp DOWN           &kp UP           &kp RIGHT        &kp ESC
+&kp LC(SPACE)  &none            &none            &none            &none            &none             &none                     &kp RET            &kp BSPC         &none            &none            &none
+                                                   &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
         };
 
         sym_layer {
             label = "SYM";
             bindings = <
-                &kp LT           &kp GT           &kp PIPE         &kp BSLH         &kp TILDE         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT        &kp CARET
-                &kp LPAR         &kp RPAR         &kp LBRC         &kp RBRC         &kp EQUAL         &kp AMPS         &kp STAR         &kp PLUS         &kp MINUS        &kp UNDERSCORE
-&kp EXCL        &kp LBKT         &kp RBKT         &kp COLON        &kp SEMI         &kp GRAVE        &none            &kp DQT          &kp QUESTION     &none            &none            &none
-                                                   &trans           &trans           &trans                            &trans           &trans           &trans
-            >;
-        };
-
-        adjust_layer {
-            label = "ADJ";
-            bindings = <
-                &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4      &kp C_BRI_DN     &kp C_BRI_UP     &none            &none            &none
-                &none            &none            &none            &none            &none             &kp C_VOL_DN     &kp C_VOL_UP     &kp C_MUTE       &none            &none
-&bt BT_CLR      &none            &none            &none            &bootloader      &none             &none            &kp C_PREV       &kp C_PP         &kp C_NEXT       &none            &none
-                                                   &trans           &trans           &trans                            &trans           &trans           &trans
+                &none            &none            &kp LBKT         &kp RBKT         &kp MINUS         &none                     &none              &none            &none            &none
+                &none            &none            &kp LPAR         &kp RPAR         &kp BSLH          &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
+&none           &none            &none            &kp LBRC         &kp RBRC         &kp EQUAL         &none                     &none              &none            &none            &none            &none
+                                                   &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
         };
 
         num_layer {
             label = "NUM";
             bindings = <
-                &kp N1           &kp N2           &kp N3           &kp N4           &kp N5            &kp N6           &kp N7           &kp N8           &kp N9           &kp N0
-                &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &none            &kp RSHFT        &kp RCMD         &kp ROPT         &kp RCTRL
-&none           &none            &none            &none            &none            &kp PLUS          &kp MINUS        &kp STAR         &kp FSLH         &kp DOT          &none            &kp PRCNT
-                                                   &trans           &trans           &trans                            &trans           &trans           &trans
+                &kp N1           &kp N2           &kp N3           &kp N4           &kp N5            &kp N6                   &kp N7             &kp N8           &kp N9           &kp N0
+                &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
+&none           &none            &none            &none            &none            &none            &none                     &kp PLUS          &kp MINUS        &kp STAR         &kp FSLH         &none
+                                                   &trans           &trans           &trans                                      &trans             &trans           &mo ADJ
             >;
         };
 
         mouse_layer {
             label = "MOUSE";
             bindings = <
-                &kp ESC          &mkp MB4         &mkp MB5         &none            &none             &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &none
-                &mkp LCLK        &mkp RCLK        &mkp MCLK        &none            &none             &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT  &none
-&none           &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &none            &none            &none            &none            &none            &none
-                                                   &trans           &trans           &trans                            &mo BOOST        &trans           &trans
+                &none            &msc SCRL_UP     &mmv MOVE_UP     &msc SCRL_DOWN   &none             &none                     &none              &none            &none            &none
+                &none            &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
+&none           &none            &msc SCRL_LEFT   &none            &msc SCRL_RIGHT  &none             &none                     &none              &none            &none            &none            &none
+                                                   &mo PRECISION    &mkp LCLK        &mkp RCLK                                  &none              &none            &trans
             >;
         };
 
-        boost_layer {
-            label = "BOOST";
+        precision_layer {
+            label = "PRECISION";
             bindings = <
-                &trans           &trans           &trans           &trans           &trans            &trans           &trans           &trans           &trans           &trans
-                &trans           &trans           &trans           &trans           &trans            &trans           &trans           &trans           &trans           &trans
-&trans          &trans           &trans           &trans           &trans           &trans            &trans           &trans           &trans           &trans           &trans           &trans
-                                                   &trans           &trans           &trans                            &trans           &trans           &trans
+                &trans           &trans           &trans           &trans           &trans            &trans                    &trans             &trans           &trans           &trans
+                &trans           &trans           &trans           &trans           &trans            &trans                    &trans             &trans           &trans           &trans
+&trans          &trans           &trans           &trans           &trans           &trans            &trans                    &trans             &trans           &trans           &trans           &trans
+                                                   &trans           &trans           &trans                                     &trans             &trans           &trans
             >;
         };
-    };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        adjust {
-            if-layers = <NAV SYM>;
-            then-layer = <ADJ>;
+        adjust_layer {
+            label = "ADJ";
+            bindings = <
+                &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4      &kp C_BRI_DN             &kp C_BRI_UP       &none            &none            &none
+                &none            &none            &none            &none            &none             &kp C_VOL_DN             &kp C_VOL_UP       &kp C_MUTE       &none            &none
+&bt BT_CLR      &none            &none            &none            &bootloader      &none             &none                     &kp C_PREV         &kp C_PP         &kp C_NEXT       &none            &none
+                                                   &trans           &trans           &trans                                      &trans             &trans           &trans
+            >;
         };
     };
 };
