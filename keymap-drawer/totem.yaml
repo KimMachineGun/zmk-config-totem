@@ -4,12 +4,12 @@ layers:
   - [Q, W, E, R, T, Y, U, I, O, P]
   - - {t: A, h: LCTRL}
     - {t: S, h: LALT}
-    - {t: D, h: LCMD}
+    - {t: D, h: Cmd}
     - {t: F, h: LSHFT}
     - G
     - H
     - {t: J, h: RSHFT}
-    - {t: K, h: RCMD}
+    - {t: K, h: Cmd}
     - {t: L, h: RALT}
     - {t: ;, h: RCTRL}
   - ['`', Z, X, C, V, B, N, M, ',', .]
@@ -22,8 +22,8 @@ layers:
     - Super
     - MOUSE
   VI:
-  - ['', '', '', Gui+Sft+Z, '', Gui+C, Gui+Z, TAB, Sft+TAB, Gui+V]
-  - [Ctl+SPACE, LALT, LCMD, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
+  - ['', '', '', Cmd+Sft+Z, '', Cmd+C, Cmd+Z, TAB, Sft+TAB, Cmd+V]
+  - [Ctl+SPACE, LALT, Cmd, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
   - ['', '', '', '', '', '', '', RET, BSPC, '']
   - - ''
     - ''
@@ -44,8 +44,8 @@ layers:
     - F2
     - F3
     - F4
-  - [BRI DN, BRI UP, VOL DN, VOL UP, MUTE, '', F5, F6, F7, F8]
-  - [BT CLR, PREV, PP, NEXT, '', '', '', F9, F10, F11]
+  - ['', VOL UP, MUTE, VOL DN, BRI UP, '', F5, F6, F7, F8]
+  - [BT CLR, PREV, PP, NEXT, '', BRI DN, '', F9, F10, F11]
   - - F12
     - Boot
     - {type: held}
@@ -56,7 +56,7 @@ layers:
     - {type: trans}
   NUM:
   - ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-  - [LCTRL, LALT, LCMD, LSHFT, '', '', RSHFT, RCMD, RALT, RCTRL]
+  - [LCTRL, LALT, Cmd, LSHFT, '', '', RSHFT, Cmd, RALT, RCTRL]
   - ['', '', '', '', '', '', '-', '=', '[', ']']
   - - \
     - ''
@@ -68,7 +68,7 @@ layers:
     - {type: trans}
   MOUSE:
   - ['', Scroll ↑, Move ↑, Scroll ↓, '', '', '', '', '', '']
-  - ['', Move ←, Move ↓, Move →, '', '', RSHFT, RCMD, RALT, RCTRL]
+  - ['', Move ←, Move ↓, Move →, '', '', RSHFT, Cmd, RALT, RCTRL]
   - ['', '', Scroll ←, '', Scroll →, '', '', '', '', '']
   - - ''
     - ''
