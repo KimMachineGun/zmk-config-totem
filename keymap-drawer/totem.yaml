@@ -15,7 +15,7 @@ layers:
   - ['`', Z, X, C, V, B, N, M, ',', .]
   - - /
     - ''''
-    - SYM
+    - FN
     - NUM
     - {t: SPACE, h: VI}
     - Hyper
@@ -23,8 +23,8 @@ layers:
     - MOUSE
   VI:
   - ['', '', '', Gui+Sft+Z, '', Gui+C, Gui+Z, TAB, Sft+TAB, Gui+V]
-  - [LCTRL, LALT, LCMD, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
-  - [Ctl+SPACE, '', '', '', '', '', '', RET, BSPC, '']
+  - [Ctl+SPACE, LALT, LCMD, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
+  - ['', '', '', '', '', '', '', RET, BSPC, '']
   - - ''
     - ''
     - {type: trans}
@@ -33,23 +33,32 @@ layers:
     - {type: trans}
     - {type: trans}
     - {type: trans}
-  SYM:
-  - ['', '[', ']', '-', '', '', '', '', '', '']
-  - ['', (, ), \, '', '', RSHFT, RCMD, RALT, RCTRL]
-  - ['', '', '{', '}', '=', '', '', '', '', '']
-  - - ''
+  FN:
+  - - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - {t: BT, h: '3'}
+    - {t: BT, h: '4'}
     - ''
+    - F1
+    - F2
+    - F3
+    - F4
+  - [BRI DN, BRI UP, VOL DN, VOL UP, MUTE, '', F5, F6, F7, F8]
+  - [BT CLR, PREV, PP, NEXT, '', '', '', F9, F10, F11]
+  - - F12
+    - Boot
     - {type: held}
     - {type: trans}
     - {type: trans}
     - {type: trans}
     - {type: trans}
-    - ADJ
+    - {type: trans}
   NUM:
   - ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
   - [LCTRL, LALT, LCMD, LSHFT, '', '', RSHFT, RCMD, RALT, RCTRL]
-  - ['', '', '', '', '', '', '', +, '-', '*']
-  - - /
+  - ['', '', '', '', '', '', '-', '=', '[', ']']
+  - - \
     - ''
     - {type: trans}
     - {type: held}
@@ -102,27 +111,6 @@ layers:
     - {type: trans}
   - - {type: trans}
     - {type: trans}
-    - {type: held}
-    - {type: trans}
-    - {type: trans}
-    - {type: trans}
-    - {type: trans}
-    - {type: held}
-  ADJ:
-  - - {t: BT, h: '0'}
-    - {t: BT, h: '1'}
-    - {t: BT, h: '2'}
-    - {t: BT, h: '3'}
-    - {t: BT, h: '4'}
-    - BRI DN
-    - BRI UP
-    - ''
-    - ''
-    - ''
-  - ['', '', '', '', '', VOL DN, VOL UP, MUTE, '', '']
-  - [BT CLR, '', '', '', Boot, '', '', PREV, PP, NEXT]
-  - - ''
-    - ''
     - {type: held}
     - {type: trans}
     - {type: trans}

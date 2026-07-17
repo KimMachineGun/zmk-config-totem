@@ -12,11 +12,10 @@
 
 #define BASE      0
 #define VI        1
-#define SYM       2
+#define FUNC      2
 #define NUM       3
 #define MOUSE     4
 #define PRECISION 5
-#define ADJ       6
 
 &mmv {
     trigger-period-ms = <8>;
@@ -93,7 +92,7 @@
                 &kp Q            &kp W            &kp E            &kp R            &kp T             &kp Y                    &kp U              &kp I            &kp O            &kp P
                 &hml LCTRL A     &hml LOPT S      &hml LCMD D      &hml LSHFT F     &kp G             &kp H                    &hmr RSHFT J       &hmr RCMD K      &hmr ROPT L      &hmr RCTRL SEMI
 &kp GRAVE       &kp Z            &kp X            &kp C            &kp V            &kp B             &kp N                    &kp M              &kp COMMA        &kp DOT          &kp FSLH         &kp APOS
-                                                   &mo SYM           &mo NUM           &vi_spc VI SPACE                            &kp LC(LS(LA(LGUI))) &kp LC(LA(LGUI)) &mo MOUSE
+                                                   &mo FUNC          &mo NUM           &vi_spc VI SPACE                            &kp LC(LS(LA(LGUI))) &kp LC(LA(LGUI)) &mo MOUSE
             >;
         };
 
@@ -101,19 +100,19 @@
             display-name = "VI";
             bindings = <
                 &none            &none            &none            &kp LG(LS(Z))    &none             &kp LG(C)                &kp LG(Z)          &kp TAB          &kp LS(TAB)      &kp LG(V)
-                &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &kp LEFT                 &kp DOWN           &kp UP           &kp RIGHT        &kp ESC
-&kp LC(SPACE)  &none            &none            &none            &none            &none             &none                     &kp RET            &kp BSPC         &none            &none            &none
+                &kp LC(SPACE)    &kp LOPT         &kp LCMD         &kp LSHFT        &none             &kp LEFT                 &kp DOWN           &kp UP           &kp RIGHT        &kp ESC
+&none           &none            &none            &none            &none            &none             &none                     &kp RET            &kp BSPC         &none            &none            &none
                                                    &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
         };
 
-        sym_layer {
-            display-name = "SYM";
+        function_layer {
+            display-name = "FN";
             bindings = <
-                &none            &kp LBKT         &kp RBKT         &kp MINUS        &none             &none                     &none              &none            &none            &none
-                &none            &kp LPAR         &kp RPAR         &kp BSLH         &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
-&none           &none            &kp LBRC         &kp RBRC         &kp EQUAL        &none             &none                     &none              &none            &none            &none            &none
-                                                   &trans           &trans           &trans                                      &trans             &trans           &mo ADJ
+                &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4      &none                    &kp F1            &kp F2          &kp F3          &kp F4
+                &kp C_BRI_DN     &kp C_BRI_UP     &kp C_VOL_DN     &kp C_VOL_UP     &kp C_MUTE        &none                    &kp F5            &kp F6          &kp F7          &kp F8
+&bt BT_CLR      &kp C_PREV       &kp C_PP         &kp C_NEXT       &none            &none             &none                    &kp F9            &kp F10         &kp F11         &kp F12         &bootloader
+                                                   &trans           &trans           &trans                                     &trans            &trans          &trans
             >;
         };
 
@@ -122,7 +121,7 @@
             bindings = <
                 &kp N1           &kp N2           &kp N3           &kp N4           &kp N5            &kp N6                   &kp N7             &kp N8           &kp N9           &kp N0
                 &kp LCTRL        &kp LOPT         &kp LCMD         &kp LSHFT        &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
-&none           &none            &none            &none            &none            &none            &none                     &kp PLUS          &kp MINUS        &kp STAR         &kp FSLH         &none
+&none           &none            &none            &none            &none            &none            &kp MINUS                &kp EQUAL         &kp LBKT         &kp RBKT         &kp BSLH         &none
                                                    &trans           &trans           &trans                                      &trans             &trans           &trans
             >;
         };
@@ -147,14 +146,6 @@
             >;
         };
 
-        adjust_layer {
-            display-name = "ADJ";
-            bindings = <
-                &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4      &kp C_BRI_DN             &kp C_BRI_UP       &none            &none            &none
-                &none            &none            &none            &none            &none             &kp C_VOL_DN             &kp C_VOL_UP       &kp C_MUTE       &none            &none
-&bt BT_CLR      &none            &none            &none            &bootloader      &none             &none                     &kp C_PREV         &kp C_PP         &kp C_NEXT       &none            &none
-                                                   &trans           &trans           &trans                                      &trans             &trans           &trans
-            >;
-        };
+
     };
 };

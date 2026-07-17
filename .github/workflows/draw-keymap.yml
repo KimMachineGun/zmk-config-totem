@@ -25,6 +25,6 @@ jobs:
       west_config_path: ""
       output_folder: "keymap-drawer"
       parse_args: "totem:'-c 10'"
-      draw_args: "totem:'-s BASE VI SYM NUM MOUSE ADJ'"
+      draw_args: "totem:'-s BASE VI FN NUM MOUSE'"
       install_version: "0.23.0"
       fail_on_error: true
