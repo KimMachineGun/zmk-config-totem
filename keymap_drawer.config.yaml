@@ -1,8 +1,8 @@
 parse_config:
   trans_legend: {t: "", type: trans}
   modifier_fn_map:
-    left_gui: "Cmd"
-    right_gui: "Cmd"
+    left_gui: "LCMD"
+    right_gui: "RCMD"
   raw_binding_map:
     "&mmv MOVE_UP": "Move ↑"
     "&mmv MOVE_DOWN": "Move ↓"
@@ -15,10 +15,7 @@ parse_config:
     "&mkp LCLK": "Left Click"
     "&mkp RCLK": "Right Click"
     "&bootloader": "Boot"
-    "&kp LCMD": "Cmd"
-    "&kp RCMD": "Cmd"
-    "&hml LCMD D": {t: "D", h: "Cmd"}
-    "&hmr RCMD K": {t: "K", h: "Cmd"}
+
     "&kp LC(LS(LA(LGUI)))": "Hyper"
     "&kp LC(LA(LGUI))": "Super"
 

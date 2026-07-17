@@ -4,12 +4,12 @@ layers:
   - [Q, W, E, R, T, Y, U, I, O, P]
   - - {t: A, h: LCTRL}
     - {t: S, h: LALT}
-    - {t: D, h: Cmd}
+    - {t: D, h: LCMD}
     - {t: F, h: LSHFT}
     - G
     - H
     - {t: J, h: RSHFT}
-    - {t: K, h: Cmd}
+    - {t: K, h: RCMD}
     - {t: L, h: RALT}
     - {t: ;, h: RCTRL}
   - ['`', Z, X, C, V, B, N, M, ',', .]
@@ -22,8 +22,8 @@ layers:
     - Super
     - MOUSE
   VI:
-  - ['', '', '', Cmd+Sft+Z, '', Cmd+C, Cmd+Z, TAB, Sft+TAB, Cmd+V]
-  - [Ctl+SPACE, LALT, Cmd, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
+  - ['', '', '', LCMD+Sft+Z, '', LCMD+C, LCMD+Z, TAB, Sft+TAB, LCMD+V]
+  - [Ctl+SPACE, LALT, LCMD, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
   - ['', '', '', '', '', '', '', RET, BSPC, '']
   - - ''
     - ''
@@ -56,7 +56,7 @@ layers:
     - {type: trans}
   NUM:
   - ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-  - [LCTRL, LALT, Cmd, LSHFT, '', '', RSHFT, Cmd, RALT, RCTRL]
+  - [LCTRL, LALT, LCMD, LSHFT, '', '', RSHFT, RCMD, RALT, RCTRL]
   - ['', '', '', '', '', '', '-', '=', '[', ']']
   - - \
     - ''
@@ -68,7 +68,7 @@ layers:
     - {type: trans}
   MOUSE:
   - ['', Scroll ↑, Move ↑, Scroll ↓, '', '', '', '', '', '']
-  - ['', Move ←, Move ↓, Move →, '', '', RSHFT, Cmd, RALT, RCTRL]
+  - ['', Move ←, Move ↓, Move →, '', '', RSHFT, RCMD, RALT, RCTRL]
   - ['', '', Scroll ←, '', Scroll →, '', '', '', '', '']
   - - ''
     - ''
