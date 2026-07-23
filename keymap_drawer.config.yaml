@@ -14,10 +14,16 @@ parse_config:
     "&msc SCRL_RIGHT": "Scroll →"
     "&mkp LCLK": "Left Click"
     "&mkp RCLK": "Right Click"
+    "&mkp MCLK": "Middle Click"
     "&bootloader": "Boot"
 
     "&kp LC(LS(LA(LGUI)))": "Hyper"
     "&kp LC(LA(LGUI))": "Super"
+    "&kp LG(LS(Z))": "Redo"
+    "&kp LG(C)": "Copy"
+    "&kp LG(Z)": "Undo"
+    "&kp LS(TAB)": "Prev Tab"
+    "&kp LG(V)": "Paste"
 
 draw_config:
   key_w: 64

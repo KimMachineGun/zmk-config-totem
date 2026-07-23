@@ -22,7 +22,7 @@ layers:
     - Super
     - MOUSE
   VI:
-  - ['', '', '', LCMD+Sft+Z, '', LCMD+C, LCMD+Z, TAB, Sft+TAB, LCMD+V]
+  - ['', '', '', Redo, '', Copy, Undo, TAB, Prev Tab, Paste]
   - [Ctl+SPACE, LALT, LCMD, LSHFT, '', LEFT, DOWN, UP, RIGHT, ESC]
   - ['', '', '', '', '', '', '', RET, BSPC, '']
   - - ''

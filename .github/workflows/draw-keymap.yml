@@ -1,12 +1,13 @@
-name: Draw keymap
+name: Draw keymaps
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - "config/totem.keymap"
-      - "boards/shields/totem/**"
+      - "config/*.keymap"
+      - "config/west.yml"
+      - "boards/**"
       - "keymap_drawer.config.yaml"
       - ".github/workflows/draw-keymap.yml"
 
@@ -20,11 +21,11 @@ jobs:
     permissions:
       contents: write
     with:
-      keymap_patterns: "config/totem.keymap"
+      keymap_patterns: "config/totem.keymap config/cornix.keymap"
       config_path: "keymap_drawer.config.yaml"
-      west_config_path: ""
+      west_config_path: "config"
       output_folder: "keymap-drawer"
-      parse_args: "totem:'-c 10'"
-      draw_args: "totem:'-s BASE VI FN NUM MOUSE'"
+      parse_args: "totem:'-c 10' cornix:'-c 12'"
+      draw_args: "totem:'-s BASE VI FN NUM MOUSE' cornix:'-s BASE VI FN NUM MOUSE'"
       install_version: "0.23.0"
       fail_on_error: true
