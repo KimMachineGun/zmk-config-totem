@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: cornix
-      url-base: https://github.com/hitsmaxft
+      url-base: https://github.com/KimMachineGun
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-keyboard-cornix
       remote: cornix
-      revision: 389c04de435dc50116ad560a6af1939f0e3de1cd
+      revision: b661f3124451c1849bb30059d53b0d66f4edce2b
   self:
     path: config
