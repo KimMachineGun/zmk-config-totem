@@ -69,7 +69,7 @@ layers:
   MOUSE:
   - ['', Scroll ↑, Move ↑, Scroll ↓, '', '', '', '', '', '']
   - ['', Move ←, Move ↓, Move →, '', '', RSHFT, RCMD, RALT, RCTRL]
-  - ['', '', Scroll ←, '', Scroll →, '', '', '', '', '']
+  - ['', '', Scroll →, '', Scroll ←, '', '', '', '', '']
   - - ''
     - ''
     - PRECISION
