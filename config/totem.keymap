@@ -125,7 +125,7 @@
             bindings = <
                 &none            &msc SCRL_UP     &mmv MOVE_UP     &msc SCRL_DOWN   &none             &none                     &none              &none            &none            &none
                 &none            &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none             &none                     &kp RSHFT          &kp RCMD         &kp ROPT         &kp RCTRL
-&none           &none            &msc SCRL_LEFT   &none            &msc SCRL_RIGHT  &none             &none                     &none              &none            &none            &none            &none
+&none           &none            &msc SCRL_RIGHT  &none            &msc SCRL_LEFT   &none             &none                     &none              &none            &none            &none            &none
                                                    &mo PRECISION    &mkp RCLK        &mkp LCLK                                  &none              &none            &trans
             >;
         };
