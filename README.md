@@ -1,5 +1,11 @@
-# Totem ZMK Configuration
+# ZMK Config
+
+Personal ZMK configurations for Totem and Cornix.
+
+## Totem
 
 ![Totem keymap](keymap-drawer/totem.svg)
 
-The diagram is automatically regenerated from [`config/totem.keymap`](config/totem.keymap) by the [Draw keymap workflow](.github/workflows/draw-keymap.yml).
+## Cornix
+
+![Cornix keymap](keymap-drawer/cornix.svg)

@@ -1,0 +1,285 @@
+layout: {zmk_keyboard: cornix}
+layers:
+  BASE:
+  - ['`', Q, W, E, R, T, Y, U, I, O, P, \]
+  - - LCTRL
+    - {t: A, h: LCTRL}
+    - {t: S, h: LALT}
+    - {t: D, h: LGUI}
+    - {t: F, h: LSHFT}
+    - G
+    - H
+    - {t: J, h: RSHFT}
+    - {t: K, h: RGUI}
+    - {t: L, h: RALT}
+    - {t: ;, h: RCTRL}
+    - ''''
+  - [LSHFT, Z, X, C, V, B, MUTE, Middle Click, N, M, ',', .]
+  - - /
+    - RSHFT
+    - CAPS
+    - LALT
+    - LGUI
+    - FN
+    - NUM
+    - {t: SPACE, h: VI}
+    - Hyper
+    - Super
+    - MOUSE
+    - RGUI
+  - [RALT, RCTRL]
+  VI:
+  - - {type: trans}
+    - ''
+    - ''
+    - ''
+    - Redo
+    - ''
+    - Copy
+    - Undo
+    - TAB
+    - Prev Tab
+    - Paste
+    - {type: trans}
+  - - {type: trans}
+    - Ctl+SPACE
+    - LALT
+    - LGUI
+    - LSHFT
+    - ''
+    - LEFT
+    - DOWN
+    - UP
+    - RIGHT
+    - ESC
+    - {type: trans}
+  - - {type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {type: trans}
+    - {type: trans}
+    - ''
+    - RET
+    - BSPC
+    - ''
+  - - ''
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+  FN:
+  - - {type: trans}
+    - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - BT PRV
+    - BT NXT
+    - ''
+    - F1
+    - F2
+    - F3
+    - F4
+    - {type: trans}
+  - - {type: trans}
+    - ''
+    - VOL DN
+    - MUTE
+    - VOL UP
+    - BRI UP
+    - ''
+    - F5
+    - F6
+    - F7
+    - F8
+    - {type: trans}
+  - - BT CLR
+    - ''
+    - PREV
+    - PP
+    - NEXT
+    - BRI DN
+    - {type: trans}
+    - {type: trans}
+    - ''
+    - F9
+    - F10
+    - F11
+  - - F12
+    - Boot
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+  NUM:
+  - - {type: trans}
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - {type: trans}
+  - - {type: trans}
+    - LCTRL
+    - LALT
+    - LGUI
+    - LSHFT
+    - ''
+    - ''
+    - RSHFT
+    - RGUI
+    - RALT
+    - RCTRL
+    - {type: trans}
+  - - {type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {type: trans}
+    - {type: trans}
+    - '-'
+    - '='
+    - '['
+    - ']'
+  - - \
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+  MOUSE:
+  - - {type: trans}
+    - ''
+    - Scroll ↑
+    - Move ↑
+    - Scroll ↓
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {type: trans}
+  - - {type: trans}
+    - ''
+    - Move ←
+    - Move ↓
+    - Move →
+    - ''
+    - ''
+    - RSHFT
+    - RGUI
+    - RALT
+    - RCTRL
+    - {type: trans}
+  - - {type: trans}
+    - ''
+    - Scroll →
+    - ''
+    - Scroll ←
+    - ''
+    - {type: trans}
+    - {type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+  - - ''
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - PRECISION
+    - Right Click
+    - Left Click
+    - ''
+    - ''
+    - {type: held}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+  PRECISION:
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+  - - {type: trans}
+    - {type: trans}

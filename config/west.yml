@@ -2,12 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: cornix
+      url-base: https://github.com/hitsmaxft
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: 904c9aec8822d79149d42c8a9a77e8828eb08f5a
       import: app/west.yml
+    - name: zmk-keyboard-cornix
+      remote: cornix
+      revision: 389c04de435dc50116ad560a6af1939f0e3de1cd
   self:
     path: config
