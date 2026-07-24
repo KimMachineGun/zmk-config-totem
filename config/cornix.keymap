@@ -72,12 +72,6 @@
             tapping-term-ms = <250>;
             bindings = <&mo>, <&kp>;
         };
-
-        encoder_scroll: encoder_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-        };
     };
 
     keymap {
@@ -91,7 +85,7 @@
                 &kp LSHFT       &kp Z            &kp X            &kp C            &kp V            &kp B                &kp C_MUTE            &mkp MCLK            &kp N              &kp M              &kp COMMA          &kp DOT            &kp FSLH           &kp RSHFT
                 &kp CAPS        &kp LALT         &kp LGUI         &mo FUNC         &mo NUM          &vi_spc VI SPACE     &kp LC(LS(LA(LGUI)))  &kp LC(LA(LGUI))     &mo MOUSE          &kp RGUI           &kp RALT           &kp RCTRL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &encoder_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         vi_layer {
@@ -102,7 +96,7 @@
                 &trans           &none            &none            &none            &none            &none                 &trans                &trans              &none              &kp RET            &kp BSPC           &none              &none              &trans
                 &trans           &trans           &trans           &trans           &trans           &trans                &trans                &trans              &trans             &trans             &trans             &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &encoder_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         function_layer {
@@ -113,7 +107,7 @@
                 &bt BT_CLR       &none            &kp C_PREV       &kp C_PP         &kp C_NEXT       &kp C_BRI_DN          &trans                &trans              &none              &kp F9             &kp F10            &kp F11            &kp F12            &bootloader
                 &trans           &trans           &trans           &trans           &trans           &trans                &trans                &trans              &trans             &trans             &trans             &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &encoder_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         num_layer {
@@ -124,7 +118,7 @@
                 &trans           &none            &none            &none            &none            &none                &trans                &trans              &kp MINUS          &kp EQUAL          &kp LBKT           &kp RBKT           &kp BSLH           &trans
                 &trans           &trans           &trans           &trans           &trans           &trans               &trans                &trans              &trans             &trans             &trans             &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &encoder_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         mouse_layer {
@@ -135,7 +129,7 @@
                 &trans           &none            &msc SCRL_RIGHT  &none            &msc SCRL_LEFT   &none                &trans                &trans              &none              &none              &none              &none              &none              &trans
                 &trans           &trans           &trans           &mo PRECISION    &mkp RCLK        &mkp LCLK            &none                 &none               &trans             &trans             &trans             &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &encoder_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         precision_layer {
@@ -146,7 +140,7 @@
                 &trans           &trans           &trans           &trans           &trans           &trans               &trans                &trans              &trans             &trans             &trans             &trans             &trans             &trans
                 &trans           &trans           &trans           &trans           &trans           &trans               &trans                &trans              &trans             &trans             &trans             &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &encoder_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
